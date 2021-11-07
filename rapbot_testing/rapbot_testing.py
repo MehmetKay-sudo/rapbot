@@ -37,6 +37,9 @@ for i in syntax02:
         print(adjectives2[0:1])
     break
 
+print(", ")
+
+# this is the code for 2 bars.
 # aim for the next session
 # create an input function call, through which the player can interact with the bot
 # 1st option: player presses one word into the call and bot gives a word back
