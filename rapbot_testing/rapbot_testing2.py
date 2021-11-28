@@ -3,7 +3,8 @@ import os
 # START // INITIALISATION-----------------------------------------------------------------------------------------------
 # establish list of names
 names = [str("cherry"), str("fearless"), str("rose")]
-
+time.sleep(1)
+print(str(names))
 # initiate game / rules
 time.sleep(3)
 choosing_name = str(input("Enter your name: "))
@@ -43,7 +44,7 @@ print("Let's go in..." + "1" + "...")
 # clear counting in program
 # clear what was written before
 # os.system("clear")
-
+# End of prerequisites--------------------------------------------------------------------------------------------------
 # RAP BATTLE // ACTUAL ENCOUNTER----------------------------------------------------------------------------------------
 # 1ST ROUND OF BATTLE
 # building syntax
@@ -75,11 +76,15 @@ for z in syntax_bot:
         print("Nice try fella! ")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
     if rhyme_user == bar2:
         print("Why are you telling the same thing, as i do? ")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
     if rhyme_user == "You ain't a saint, the worst in the state! ":
         print("AAAAAAHHHHHH! ")
@@ -87,6 +92,8 @@ for z in syntax_bot:
         print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
         time.sleep(5)
     break
+
+# built-in return
 
 # 2ND ROUND OF BATTLE---------------------------------------------------------------------------------------------------
 # creating second syntax
@@ -117,11 +124,15 @@ for i in syntax_bot2:
         print("Nice try fella! ")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
     if rhyme_user == "Big my brain! ":
         print("Why are you telling the same thing, as i do? ")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
     if rhyme_user == "You just faint and i maintain! ":
         print("You beat me twice, let us see next round")
@@ -161,33 +172,24 @@ for b in syntax_bot3:
         print("Nice try fella! ")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
     if rhyme_user == bar2:
-        print("Why are you telling the same thing, as i do? ")
+        print("Why are you telling the same thing, as i do?")
         time.sleep(1)
         print("Try again! ")
+        time.sleep(1)
+        print(str(input("Enter your rhyme sucker: ")))
 
-    if rhyme_user == "You ain't a saint, the worst in the state! ":
+    if rhyme_user == "You ain't a saint, the worst in the state!":
         time.sleep(2)
         print("AAAAAAHHHHHH! ")
         time.sleep(1)
         print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
         time.sleep(5)
+        print("G" + "A" + "M" + "E" + ".." + "E" + "N" + "D" + "S")
     break
+# End of Battle---------------------------------------------------------------------------------------------------------
 
 
-# nov - late
-# aim for the next session
-# create an input function call, through which the player can interact with the bot
-# 1st option: player presses one word into the call and bot gives a word back
-# 2nd option: bot rhymes one rhyme and the player has to complete the rhyme line
-# next step is to modify code in def functions / f.e. def syntax01 (): ...
-# how can i merge the rhyme lines into one rhyme line again
-# create a timer function
-
-# nov - late
-# main issues:
-# you can enter what you want, it does not change the flow of the program
-# need to work more with functions
-# the main structure is ok, but the user offers more variability in entering rhymes.
-# how can a bot react to that?
