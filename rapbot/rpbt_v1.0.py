@@ -66,6 +66,14 @@ for y in syntax_bot:
         print(bar3)
     break
 
+# print the options the rhymer has / 1st round
+rhyme01 = str("1. I am greater! ")
+rhyme02 = str("2. I rhyme great! ")
+rhyme03 = str("3. You ain't a saint, the worst in the state!")
+
+player_rhymes = (rhyme01, rhyme02, rhyme03)
+print(player_rhymes)
+
 # player has to put input into the game
 time.sleep(1)
 rhyme_user = str(input("Enter your rhyme sucker: "))
@@ -114,20 +122,28 @@ for i in syntax_bot2:
         print(bar6)
     break
 
+# print the options the rhymer has
+rhyme04 = str("1. You are late! ")
+rhyme05 = str("2. Big my brain! ")
+rhyme06 = str("3. You just faint and i maintain! ")
+
+player_rhymes = (rhyme04, rhyme05, rhyme06)
+print(player_rhymes)
+
 # player has to put input into the game
 time.sleep(1)
 rhyme_user2 = str(input("Enter your rhyme sucker: "))
 
 # compare rhyme from user with syntax from bot
 for i in syntax_bot2:
-    if rhyme_user2 == "You are late ":
+    if rhyme_user2 == "You are late! ":
         print("Nice try fella! ")
         time.sleep(1)
         print("Try again! ")
         time.sleep(1)
         print(str(input("Enter your rhyme sucker: ")))
 
-    if rhyme_user == "Big my brain! ":
+    if rhyme_user == bar5:
         print("Why are you telling the same thing, as i do? ")
         time.sleep(1)
         print("Try again! ")
@@ -144,9 +160,9 @@ time.sleep(2)
 print("This is the last round sucker! Show me your skills! ")
 
 # building syntax
-bar7 = str("Killer instinct.")
-bar8 = str("Kill you with one ink.")
-bar9 = str("Don't try me, otherwise you go exstinct.")
+bar7 = str("Killer instinct. ")
+bar8 = str("Kill you with one ink. ")
+bar9 = str("Don't try me, otherwise you go exstinct. ")
 
 # mix 1st round syntax
 syntax_bot3 = [bar7, bar8, bar9]
@@ -162,34 +178,43 @@ for y in syntax_bot3:
         print(bar9)
     break
 
+# print the options the rhymer has
+rhyme07 = str("1. I am greater! ")
+rhyme08 = str("2. Kill you with one ink. ")
+rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
+
+player_rhymes = (rhyme07, rhyme08, rhyme09)
+print(player_rhymes)
+
 # player has to put input into the game
 time.sleep(1)
 rhyme_user3 = str(input("Enter your rhyme sucker: "))
 
 # compare rhyme from user with syntax from bot
 for b in syntax_bot3:
-    if rhyme_user == "I am greater":
+    if rhyme_user == "I am greater! ":
         print("Nice try fella! ")
         time.sleep(1)
         print("Try again! ")
         time.sleep(1)
         print(str(input("Enter your rhyme sucker: ")))
 
-    if rhyme_user == bar2:
+    if rhyme_user == bar8:
         print("Why are you telling the same thing, as i do? ")
         time.sleep(1)
         print("Try again! ")
         time.sleep(1)
         print(str(input("Enter your rhyme sucker: ")))
 
-    if rhyme_user == "You ain't a saint, the worst in the state! ":
+    if rhyme_user == "You fake n-sync, i terminate before an eye blink! ":
         time.sleep(2)
         print("AAAAAAHHHHHH! ")
         time.sleep(1)
         print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
         time.sleep(5)
         print("Game ends...")
+        time.sleep(1)
+        print("MIXTAPE GAMES / 2021")
     break
-
 
 
