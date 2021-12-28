@@ -97,13 +97,8 @@ print(player_rhymes)
 # player has to put input into the game
 time.sleep(1)
 rhyme_user = str(input("Enter your rhyme sucker: "))
-#
 
-# compare rhyme from user with syntax from bot
-def battle():
-    rhyme01 = str("1. I am greater! ")
-    rhyme02 = str("2. I rhyme great! ")
-    rhyme03 = str("3. You ain't a saint, the worst in the state!")
+# first round // loop
 for z in syntax_bot:
     if rhyme_user == rhyme01:
         print("Nice try fella! ")
@@ -113,7 +108,7 @@ for z in syntax_bot:
         print(str(input("Enter your rhyme sucker: ")))
     else:
         print(False)
-        return()
+        break
 
     if rhyme_user == rhyme02:
         print("Why are you telling the same thing, as i do? ")
