@@ -1,8 +1,8 @@
 import time
-from os import system
+#from os import system
 import random
 
-# START // INITIALISATION-----------------------------------------------------------------------------------------------
+# START // INITIALISATION-SIMULATION----------------------------------------------------------------------------------------------
 # establish list of names
 names = [("cherry", "fearless", "rose")]
 time.sleep(1)
@@ -12,11 +12,6 @@ for k in names:
 # make user choose name
 time.sleep(3)
 choosing_name = input("Enter your name: ")
-
-###############
-# flush display
-system("clear")
-###############
 
 # check string with input // data
 for x in names:
@@ -30,11 +25,6 @@ for x in names:
         time.sleep(1)
     break
 
-###############
-# flush display
-system("clear")
-###############
-
 # battle starts
 time.sleep(1)
 print("You wanna rhyme against me? ")
@@ -47,11 +37,6 @@ print("you ")
 time.sleep(1)
 print("READY? ")
 
-###############
-# flush display
-system("clear")
-###############
-
 # write a timer / counter
 time.sleep(2)
 print("Let's go in..." + "3" + "..." )
@@ -60,10 +45,6 @@ print("Let's go in..." + "2" + "...")
 time.sleep(1)
 print("Let's go in..." + "1" + "...")
 
-###############
-# flush display
-system("clear")
-###############
 
 # RAP BATTLE // ACTUAL ENCOUNTER----------------------------------------------------------------------------------------
 # 1ST ROUND OF BATTLE
@@ -128,12 +109,6 @@ for z in syntax_bot:
         print(True)
     break
 
-###############
-# flush display
-system("clear")
-###############
-
-
 # 2ND ROUND OF BATTLE---------------------------------------------------------------------------------------------------
 # creating second syntax
 bar4 = str("I am straight! ")
@@ -190,11 +165,6 @@ for i in syntax_bot2:
     if rhyme_user == rhyme06:
         print("You beat me twice, let us see next round")
     break
-
-###############
-# flush display
-system("clear")
-###############
 
 # RAP BATTLE // ACTUAL ENCOUNTER----------------------------------------------------------------------------------------
 # 3ST ROUND OF BATTLE / LAST MAN STANDING
@@ -259,13 +229,6 @@ for b in syntax_bot3:
         print("AAAAAAHHHHHH! ")
         time.sleep(1)
         print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
-        time.sleep(5)
-        print("Game ends...")
-        time.sleep(1)
-        print("MIXTAPE GAMES / 2021")
     break
-
-###############
-# flush display
-system("clear")
-###############
+    
+print("MIXTAPE GAMES 2021" + "by" + "mehmet.kay.programming@gmail.com")
