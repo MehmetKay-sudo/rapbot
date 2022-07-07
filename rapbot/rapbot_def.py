@@ -8,4 +8,4 @@ def bars():
   return bar_bowl
 
 bars = bars()
-print(bars)
+print(bars, end="")
