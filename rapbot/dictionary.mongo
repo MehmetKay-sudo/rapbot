@@ -1,0 +1,6 @@
+# example to create a dictionary in mongodb
+nouns = "house", "fence", "garden"
+
+verbs = "is", "gets"
+
+adjectives = "big", "small", "large"
