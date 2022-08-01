@@ -18,7 +18,7 @@ def bars2():
     bar5 = str("Big my brain! ")
     bar6 = str("Skilled and insane! ")
 
-bars2 = bars()
+bars2 = bars2()
 
 def bars3():
     bar7 = str("Killer instinct. ")
