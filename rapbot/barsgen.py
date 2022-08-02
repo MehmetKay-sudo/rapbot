@@ -1,5 +1,6 @@
 def main():
-
+    print(context_linker)
+    print(context_linker2)
 
 # create two lists with letters as strings
 letters_big = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -15,12 +16,16 @@ def context_linker():
     if link == "link"
     print(link)
 
+context_linker = context_linker()
+
 #a function to link words into sentences
 def context_linker2():
     words = [nouns, verbs, adjectives]
     link2 = input("Enter link2 to generate a syntax: ")
     if link2 == "link2"
     print(words)
+
+context_linker2 = context_linker2()
 
 #create a bowl of letters
 #letters_general = [letters_big, letters_small]
