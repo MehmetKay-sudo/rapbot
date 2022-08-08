@@ -4,20 +4,17 @@ import random as rn
 # this is a battle round module
 # write a main function
 def main():
-    while True:
-        print(rhymegen)
+    print(rhymegen)
 
 # introduction
 bars = [str("I am here to win"), str("Not here to sing"), str("I am the king")]
 
 # print rhyme choices
-counter_rhyme1 = [str("You are here to sing"), str("Not here to win"), str("You are kid with no wing")]
-counter_rhyme2 = [str("Never mind sucker! "), str("You will be defeated"),
-                   str("This rap battle is going to be heated!"), str("An ambulance will be needed.")]
-counter_rhyme3 = [str("You won.")]
+counter_rhyme1 = "You are here to sing. " + "Not here to win. " + "You are kid with no wing. "
+counter_rhyme2 = "This rap battle is going to be heated! " + "An ambulance will be needed. "
 
 # mix counter_rhymes
-counter_rhymes = [counter_rhyme1, counter_rhyme2, counter_rhyme3]
+counter_rhymes = (counter_rhyme1, counter_rhyme2)
 
 # print counter rhymes for selection
 print(counter_rhymes)
