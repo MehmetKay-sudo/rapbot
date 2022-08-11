@@ -3,24 +3,24 @@ import random as rn
 
 # this is a battle round module
 # write a main function
-def main():
-    print(bot_bars)
-    print(counter_rhymes)
-    print(rhymegen)
+#def main():
+#    print(bot_bars)
+#    print(counter_rhymes)
+#    print(rhymegen)
 
 # introduction
-def bars():
-    bot_bars1 = "I am the rapbot. " + "call me the rapgod. "
-    bot_bars2 = "Try to beat me. " + "This will not be easy. "
-
-bot_bars = bars()
+def bars(x, y):
+    return x+y
+    import time
+    x = "I am the rapbot. " + "call me the rapgod. "
+    time.sleep(1)
+    y = "Try to beat me. " + "This will not be easy. "
 
 # print rhyme choices
-def counter_rhymes():
-    counter_rhymes1 = "1" + ": " + "You are here to sing. " + "Not here to win. " + "You are kid with no wing. "
-    counter_rhymes2 = "2" + ": " + "This rap battle is going to be heated! " + "An ambulance will be needed. "
-
-counter_rhymes = counter_rhymes()
+def counter_rhymes(g, h):
+    return g+h
+    g = "1" + ": " + "You are here to sing. " + "Not here to win. " + "You are kid with no wing. "
+    h = "2" + ": " + "This rap battle is going to be heated! " + "An ambulance will be needed. "
 
 # generate input function
 counter = input("Choose rhyme for counter attack through pressing 1 and 2: ")
@@ -33,5 +33,3 @@ def rhymegen():
                 print("You beat me. " + "let's go to the next round. ")
             else:
                 print("This is not enough sucker! " + "Try again. ")
-
-rhymegen = rhymegen()
