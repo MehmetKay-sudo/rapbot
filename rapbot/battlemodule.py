@@ -19,7 +19,7 @@ def bars(x, y):
     bars = bars(x,y)
 print(bars)
 
-bars = bars()
+#bars = bars()
 
 # print rhyme choices
 def counter_rhymes(g, h):
@@ -30,7 +30,7 @@ def counter_rhymes(g, h):
     counter_rhymes = counter_rhymes(g,h)
 print(counter_rhymes)
 
-counter_rhymes = counter_rhymes()
+#counter_rhymes = counter_rhymes()
 
 # generate input function
 counter = input("Choose rhyme for counter attack through pressing 1 and 2: ")

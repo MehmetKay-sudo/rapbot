@@ -1,0 +1,5 @@
+The idea is to create a bars function.
+Then create a simulation function, so the bot simulates
+pauses like a human, before speaking.
+The next step is to create a whole class around bars packages,
+so i can reuse classes for implementing bars into the bot.
