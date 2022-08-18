@@ -105,16 +105,16 @@ def compare():
       print("Try again! ")
       time.sleep(1)
       print(str(input("Enter your rhyme sucker: ")))
-      else:
-        print(False)
-        break
-      if rhyme_user == rhyme03:
-        print("AAAAAAHHHHHH! ")
-        time.sleep(1)
-        print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
-        time.sleep(5)
-        print(True)
-        break
+    else:
+      print(False)
+      break
+    if rhyme_user == rhyme03:
+      print("AAAAAAHHHHHH! ")
+      time.sleep(1)
+      print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
+      time.sleep(5)
+      print(True)
+      break
 
 # 2nd ROUND OF BATTLE---------------------------------------------------------------------------------------------------
 # creating second syntax
