@@ -7,10 +7,10 @@ import random
 # START // INITIALISATION-SIMULATION----------------------------------------------------------------------------------------------
 # establish list of names
 while True:
-  names = [("cherry", "fearless", "rose")]
-  time.sleep(1)
-  for k in names:
-    print(names)
+    names = [("cherry", "fearless", "rose")]
+    time.sleep(1)
+    for k in names:
+        print(names)
     break
 
 # make user choose name
