@@ -1,5 +1,5 @@
 # first you definde the function
-def class(a,b):
+class bars:
   def bar(a):
     a = "Let's rhyme and dance" + "/"
     print(a)
