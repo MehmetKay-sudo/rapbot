@@ -29,9 +29,7 @@ class Intro:
             break
     # battle starts
     def simulation2():
-        time.sleep(1)
         print("You wanna rhyme against me? ")
-        time.sleep(2)
         print("Let's see, what you got!")
         time.sleep(2)
         print("Are ")
@@ -63,11 +61,8 @@ class Battle:
                 # creating loops for barsdef bars_loop()
                 for y in syntax_bot:
                     if y in syntax_bot:
-                        time.sleep(1)
                         print(bar1)
-                        time.sleep(1)
                         print(bar2)
-                        time.sleep(1)
                         print(bar3)
                         break
             # print the options the rhymer has / 1st round
@@ -85,27 +80,21 @@ class Battle:
                 for z in syntax_bot:
                     if rhyme_user == rhyme01:
                         print("Nice try fella! ")
-                        time.sleep(1)
                         print("Try again! ")
-                        time.sleep(1)
                         print(str(input("Enter your rhyme sucker: ")))
                     else:
                         print(False)
                         return()
                     if rhyme_user == rhyme02:
                         print("Why are you telling the same thing, as i do? ")
-                        time.sleep(1)
                         print("Try again! ")
-                        time.sleep(1)
                         print(str(input("Enter your rhyme sucker: ")))
                     else:
                         print(False)
                         break
                     if rhyme_user == rhyme03:
                         print("AAAAAAHHHHHH! ")
-                        time.sleep(1)
                         print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
-                        time.sleep(5)
                         print(True)
                         break
     # 2nd ROUND OF BATTLE
@@ -121,11 +110,8 @@ class Battle:
             def bars_loop2():
                 for i in syntax_bot2:
                     if i in syntax_bot2:
-                        time.sleep(1)
                         print(bar4)
-                        time.sleep(2)
                         print(bar5)
-                        time.sleep(3)
                         print(bar6)
                     break
             # print the options the rhymer has
@@ -136,16 +122,13 @@ class Battle:
                 player_rhymes = (str(rhyme04), str(rhyme05), str(rhyme06))
                 print(player_rhymes)
                 # player has to put input into the game
-                time.sleep(1)
                 rhyme_user2 = str(input("Enter your rhyme sucker: "))
                 # compare rhyme from user with syntax from bot
             def compare2():
                 for i in syntax_bot2:
                     if rhyme_user2 == rhyme04:
                         print("Nice try fella! ")
-                        time.sleep(1)
                         print("Try again! ")
-                        time.sleep(1)
                         print(str(input("Enter your rhyme sucker: ")))
                      else:
                         print(False)
