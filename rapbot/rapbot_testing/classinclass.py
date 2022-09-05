@@ -49,7 +49,6 @@ class Intro:
         print("Let's go in..." + "1" + "...")
     # RAP BATTLE // ACTUAL ENCOUNTER
     # 1st ROUND OF BATTLE
-    # building syntax
 
 class Battle:
     class Round1:
@@ -110,7 +109,6 @@ class Battle:
                         print(True)
                         break
     # 2nd ROUND OF BATTLE
-    # creating second syntax
     class Round2:
         while True:
             def bars2():
@@ -143,87 +141,68 @@ class Battle:
                 # compare rhyme from user with syntax from bot
             def compare2():
                 for i in syntax_bot2:
-                    # format here...
-                if rhyme_user2 == rhyme04:
-                    print("Nice try fella! ")
-                    time.sleep(1)
-                    print("Try again! ")
-                    time.sleep(1)
-                    print(str(input("Enter your rhyme sucker: ")))
-                else:
-                    print(False)
-                break
-                if rhyme_user == rhyme05:
-                    print("Why are you telling the same thing, as i do? ")
-                    time.sleep(1)
-                    print("Try again! ")
-                    time.sleep(1)
-                    print(str(input("Enter your rhyme sucker: ")))
-                else:
-                    print(False)
-                break
-                if rhyme_user == rhyme06:
-                    print("You beat me twice, let us see next round")
-                break
-    # RAP BATTLE // ACTUAL ENCOUNTER
-    # 3rd ROUND OF BATTLE / LAST MAN STANDING
-    # time.sleep(2)
-    # print("This is the last round sucker! Show me your skills! ")
-    # building syntax
-class Round3:
-    while True:
-        def bars3():
-            bar7 = str("Killer instinct. ")
-            bar8 = str("Kill you with one ink. ")
-            bar9 = str("Don't try me, otherwise you go exstinct. ")
-        # mix 1st round syntax
-        syntax_bot3 = [str(bar7), str(bar8), str(bar9)]
-        print(syntax_bot3)
-        # creating loops
-        def bars_loop3():
-            for y in syntax_bot3:
-                if y in syntax_bot3:
-                    time.sleep(1)
+                    if rhyme_user2 == rhyme04:
+                        print("Nice try fella! ")
+                        time.sleep(1)
+                        print("Try again! ")
+                        time.sleep(1)
+                        print(str(input("Enter your rhyme sucker: ")))
+                     else:
+                        print(False)
+                     break
+                    if rhyme_user == rhyme05:
+                        print("Why are you telling the same thing, as i do? ")
+                        print("Try again! ")
+                        print(str(input("Enter your rhyme sucker: ")))
+                    else:
+                        print(False)
+                        break
+                    if rhyme_user == rhyme06:
+                        print("You beat me twice, let us see next round")
+                        break
+    class Round3:
+        while True:
+            def bars3():
+                bar7 = str("Killer instinct. ")
+                bar8 = str("Kill you with one ink. ")
+                bar9 = str("Don't try me, otherwise you go exstinct. ")
+                # mix 1st round syntax
+                syntax_bot3 = [str(bar7), str(bar8), str(bar9)]
+                print(syntax_bot3)
+                # creating loops
+            def bars_loop3():
+                for y in syntax_bot3:
                     print(bar7)
-                    time.sleep(1)
                     print(bar8)
-                    time.sleep(1)
                     print(bar9)
-                break
-        # print the options the rhymer has
-        def options3():
-            rhyme07 = str("1. I am greater! ")
-            rhyme08 = str("2. Kill you with one ink. ")
-            rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
-            player_rhymes = (str(rhyme07), str(rhyme08), str(rhyme09))
-            print(player_rhymes)
-            # player has to put input into the game
-            time.sleep(1)
-            rhyme_user3 = str(input("Enter your rhyme sucker: "))
-        # compare rhyme from user with syntax from bot
-        def compare3():
-            for b in syntax_bot3:
-                if rhyme_user == rhyme07:
-                    print("Nice try fella! ")
-                    time.sleep(1)
-                    print("Try again! ")
-                    time.sleep(1)
-                    print(str(input("Enter your rhyme sucker: ")))
-                else:
-                    print(False)
-                break
-                if rhyme_user == rhyme08:
-                    print("Why are you telling the same thing, as i do? ")
-                    time.sleep(1)
-                    print("Try again! ")
-                    time.sleep(1)
-                    print(str(input("Enter your rhyme sucker: ")))
-                else:
-                    print(False)
-                break
-                if rhyme_user == rhyme09:
-                    time.sleep(2)
+                    break
+                    # print the options the rhymer has
+            def options3():
+                rhyme07 = str("1. I am greater! ")
+                rhyme08 = str("2. Kill you with one ink. ")
+                rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
+                player_rhymes = (str(rhyme07), str(rhyme08), str(rhyme09))
+                print(player_rhymes)
+                # player has to put input into the game
+                rhyme_user3 = str(input("Enter your rhyme sucker: "))
+                # compare rhyme from user with syntax from bot
+            def compare3():
+                for b in syntax_bot3:
+                    if rhyme_user == rhyme07:
+                        print("Nice try fella! ")
+                        print("Try again! ")
+                        print(str(input("Enter your rhyme sucker: ")))
+                    else:
+                        print(False)
+                        break
+                    if rhyme_user == rhyme08:
+                        print("Why are you telling the same thing, as i do? ")
+                        print("Try again! ")
+                        print(str(input("Enter your rhyme sucker: ")))
+                    else:
+                        print(False)
+                        break
+                    if rhyme_user == rhyme09:
                     print("AAAAAAHHHHHH! ")
-                    time.sleep(1)
                     print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
-                break
+                    break
