@@ -130,9 +130,9 @@ class Battle:
                         print("Nice try fella! ")
                         print("Try again! ")
                         print(str(input("Enter your rhyme sucker: ")))
-                     else:
+                    else:
                         print(False)
-                     break
+                    break
                     if rhyme_user == rhyme05:
                         print("Why are you telling the same thing, as i do? ")
                         print("Try again! ")
@@ -186,6 +186,6 @@ class Battle:
                         print(False)
                         break
                     if rhyme_user == rhyme09:
-                    print("AAAAAAHHHHHH! ")
-                    print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
+                        print("AAAAAAHHHHHH! ")
+                        print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
                     break
