@@ -27,6 +27,7 @@ class Intro:
                 print("Name chosen. ")
                 time.sleep(1)
             break
+            
     # battle starts
     def simulation2():
         print("You wanna rhyme against me? ")
