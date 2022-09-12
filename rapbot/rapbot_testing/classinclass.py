@@ -1,5 +1,5 @@
-import time
-#from os import system
+from time import sleep
+from os import system, name
 import random
 
 # all bars are examples and can be modified
@@ -28,6 +28,11 @@ class Intro:
                 time.sleep(1)
             break
             
+#  flushing the screen
+# def clear():
+    
+
+
     # battle starts
     def simulation2():
         print("You wanna rhyme against me? ")
