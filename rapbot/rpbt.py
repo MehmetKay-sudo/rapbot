@@ -31,8 +31,6 @@ class Intro:
 #  flushing the screen
 # def clear():
     
-
-
     # battle starts
     def simulation2():
         print("You wanna rhyme against me? ")
