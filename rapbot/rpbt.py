@@ -1,4 +1,4 @@
-from time import sleep
+import time
 from os import system, name
 import random
 
@@ -6,16 +6,14 @@ import random
 # START // INITIALISATION-SIMULATION
 # establish list of names
 class Intro:
-    while True:
-        names = [("cherry", "fearless", "rose")]
-        time.sleep(1)
-        for k in names:
-            print(names)
-        break
-    # make user choose name
-    time.sleep(3)
+    names = [("cherry", "fearless", "rose")]
+    print(names)
     choosing_name = input("Enter your name: ")
-    # check string with input // data
+    if choosing_name in names:
+        print(choosing_name)
+        break
+# here will be code to exit() program
+# check string with input // data
     def simulation():
         for x in names:
             if choosing_name in names:
@@ -27,11 +25,12 @@ class Intro:
                 print("Name chosen. ")
                 time.sleep(1)
             break
-            
+
+simulation1 = simulation()
+print(simulation1)
+
 #  flushing the screen
 # def clear():
-    
-
 
     # battle starts
     def simulation2():
