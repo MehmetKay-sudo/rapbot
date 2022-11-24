@@ -1,6 +1,6 @@
 import time
 from os import system, name
-import random
+#import random
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
