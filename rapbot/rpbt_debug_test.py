@@ -53,8 +53,8 @@ def simulation3():
     # RAP BATTLE // ACTUAL ENCOUNTER
     # 1st ROUND OF BATTLE
 
-class Battle:
-    class Round1:
+#class Battle:
+class Round1:
         while True:
             def bars():
                 bar1 = str("I rhyme fine!")
@@ -103,7 +103,7 @@ class Battle:
                         print(True)
                         break
     # 2nd ROUND OF BATTLE
-    class Round2:
+class Round2:
         while True:
             def bars2():
                 bar4 = str("I am straight! ")
@@ -148,7 +148,7 @@ class Battle:
                     if rhyme_user == rhyme06:
                         print("You beat me twice, let us see next round")
                         break
-    class Round3:
+class Round3:
         while True:
             def bars3():
                 bar7 = str("Killer instinct. ")
