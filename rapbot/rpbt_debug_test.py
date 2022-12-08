@@ -26,12 +26,6 @@ class Intro:
                 time.sleep(1)
             break
 
-simulation1 = simulation()
-print(simulation1)
-
-#  flushing the screen
-# def clear():
-
     # battle starts
 def simulation2():
         print("You wanna rhyme against me? ")
@@ -102,6 +96,9 @@ class Round1:
                         print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
                         print(True)
                         break
+# package class Round 1
+#Round1 = Round1()
+
     # 2nd ROUND OF BATTLE
 class Round2:
         while True:
@@ -148,6 +145,9 @@ class Round2:
                     if rhyme_user == rhyme06:
                         print("You beat me twice, let us see next round")
                         break
+# package class Round 2
+#Round2 = Round2()
+
 class Round3:
         while True:
             def bars3():
@@ -194,3 +194,5 @@ class Round3:
                         print("AAAAAAHHHHHH! ")
                         print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
                     break
+# package class Round 3
+#Round3 = Round3()
