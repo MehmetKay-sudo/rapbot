@@ -13,8 +13,8 @@ adjectives = ["big", "small", "long", "short", "nice", "quite", "loud"]
 def context_linker():
     context = [letters_big, letters_small]
     link = input("Enter link to generate a word: ")
-    if link == "link"
-    print(link)
+    if link == "link":
+     print(link)
 
 context_linker = context_linker()
 
@@ -26,6 +26,7 @@ def context_linker2():
     print(words)
 
 context_linker2 = context_linker2()
+print(context_linker2)
 
 #create a bowl of letters
 #letters_general = [letters_big, letters_small]
