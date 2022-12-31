@@ -31,6 +31,7 @@ def simulation():
 print(simulation)
 
 #  flushing the screen
+# to start battle with a clear screen
 def clear():
     print(clear)
 
