@@ -2,16 +2,22 @@ import time
 from os import system, name
 #import random
 
+def main():
+    print(intro)
+    print(simulation1)
+    print(simulation2)
+    print(simulation3)
+
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
 # establish list of names
-class intro:
+def intro():
     names = [("cherry", "fearless", "rose")]
     print(names)
     choosing_name = input("Enter your name: ")
     if choosing_name in names:
         print(choosing_name)
-#        break
+        break
 print(intro)
 
 # here will be code to exit() program
@@ -27,7 +33,6 @@ def simulation1():
             print("Name chosen. ")
             time.sleep(1)
             break
-
 print(simulation1)
 
 #  flushing the screen
