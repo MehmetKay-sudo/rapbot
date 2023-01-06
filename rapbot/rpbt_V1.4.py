@@ -16,19 +16,19 @@ print(intro)
 
 # here will be code to exit() program
 # check string with input // data
-def simulation():
+def simulation1():
     for x in names:
-        if choosing_name in names
-        time.sleep(1)
-        print("." + "." + "." + "processing data" + "." + "." + ".")
-        time.sleep(2)
-        print("Please wait. ")
-        time.sleep(3)
-        print("Name chosen. ")
-        time.sleep(1)
-        break
+        if choosing_name in names:
+            time.sleep(1)
+            print("." + "." + "." + "processing data" + "." + "." + ".")
+            time.sleep(2)
+            print("Please wait. ")
+            time.sleep(3)
+            print("Name chosen. ")
+            time.sleep(1)
+            break
 
-print(simulation)
+print(simulation1)
 
 #  flushing the screen
 # to start battle with a clear screen
