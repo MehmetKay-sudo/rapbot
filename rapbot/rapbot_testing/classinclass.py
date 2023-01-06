@@ -1,5 +1,9 @@
 from time import sleep
 from os import system, name
+
+import random as rn
+import nltk
+=======
 import random
 
 # all bars are examples and can be modified
@@ -27,11 +31,12 @@ class Intro:
                 print("Name chosen. ")
                 time.sleep(1)
             break
-            
+
 #  flushing the screen
 # def clear():
-    
 
+#  flushing the screen
+# def clear():
 
     # battle starts
     def simulation2():
