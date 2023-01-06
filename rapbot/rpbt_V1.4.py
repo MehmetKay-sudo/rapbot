@@ -2,35 +2,45 @@ import time
 from os import system, name
 #import random
 
+def main():
+    print(intro)
+    print(simulation1)
+    print(simulation2)
+    print(simulation3)
+
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
 # establish list of names
-class Intro:
+def intro():
     names = [("cherry", "fearless", "rose")]
     print(names)
     choosing_name = input("Enter your name: ")
     if choosing_name in names:
         print(choosing_name)
 #        break
+print(intro)
+
 # here will be code to exit() program
 # check string with input // data
-    def simulation():
-        for x in names:
-            if choosing_name in names:
-                time.sleep(1)
-                print("." + "." + "." + "processing data" + "." + "." + ".")
-                time.sleep(2)
-                print("Please wait. ")
-                time.sleep(3)
-                print("Name chosen. ")
-                time.sleep(1)
+def simulation1():
+    for x in names:
+        if choosing_name in names:
+            time.sleep(1)
+            print("." + "." + "." + "processing data" + "." + "." + ".")
+            time.sleep(2)
+            print("Please wait. ")
+            time.sleep(3)
+            print("Name chosen. ")
+            time.sleep(1)
             break
-
-simulation1 = simulation()
 print(simulation1)
 
 #  flushing the screen
-# def clear():
+# to start battle with a clear screen
+def clear():
+    print(clear)
+
+print(clear)
 
     # battle starts
 def simulation2():
@@ -43,6 +53,9 @@ def simulation2():
         time.sleep(1)
         print("READY? ")
     # write a timer / counter
+
+print(simulation2)
+
 def simulation3():
         time.sleep(2)
         print("Let's go in..." + "3" + "..." )
@@ -50,6 +63,9 @@ def simulation3():
         print("Let's go in..." + "2" + "...")
         time.sleep(1)
         print("Let's go in..." + "1" + "...")
+
+print(simulation3)
+
     # RAP BATTLE // ACTUAL ENCOUNTER
     # 1st ROUND OF BATTLE
 
