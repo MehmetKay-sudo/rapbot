@@ -17,7 +17,7 @@ def intro():
     choosing_name = input("Enter your name: ")
     if choosing_name in names:
         print(choosing_name)
-        break
+#        break
 print(intro)
 
 # here will be code to exit() program
