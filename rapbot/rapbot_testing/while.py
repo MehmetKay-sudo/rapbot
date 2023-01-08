@@ -52,9 +52,10 @@ class Intro:
     # 1st ROUND OF BATTLE
     # building syntax
 
-class Round1:
-    while True:
-        def bars():
+class Battle:
+    class Round1:
+        while True:
+            def bars():
             bar1 = str("I rhyme fine!")
             bar2 = str("I rhyme great!")
             bar3 = str("I am the best in the state!")

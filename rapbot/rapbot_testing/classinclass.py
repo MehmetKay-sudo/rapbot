@@ -1,7 +1,10 @@
 from time import sleep
 from os import system, name
+
 import random as rn
 import nltk
+=======
+import random
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
@@ -32,7 +35,8 @@ class Intro:
 #  flushing the screen
 # def clear():
 
-
+#  flushing the screen
+# def clear():
 
     # battle starts
     def simulation2():
