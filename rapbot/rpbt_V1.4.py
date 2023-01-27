@@ -2,23 +2,28 @@ import time
 from os import system, name
 #import random
 
-def main():
-    print(intro)
-    print(simulation1)
-    print(simulation2)
-    print(simulation3)
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
 # establish list of names
+
+import time
+from os import system, name
+#import random
+
 def intro():
-    names = [("cherry", "fearless", "rose")]
-    print(names)
-    choosing_name = input("Enter your name: ")
-    if choosing_name in names:
-        print(choosing_name)
-#        break
-print(intro)
+    while True:
+        names = [("cherry", "fearless", "rose")]
+        print(names)
+
+        choosing_name = input("Enter your name: ")
+        for choosing_name in names:
+            if choosing_name == "cherry":
+                return True
+            else:
+                return False
+
+intro()
 
 # here will be code to exit() program
 # check string with input // data
