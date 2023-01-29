@@ -218,5 +218,3 @@ for b in syntax_bot3:
         time.sleep(1)
         print("MIXTAPE GAMES / 2021")
     break
-
-

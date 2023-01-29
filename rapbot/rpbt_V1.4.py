@@ -16,9 +16,9 @@ def intro():
         names = [("cherry", "fearless", "rose")]
         print(names)
 
-        choosing_name = input("Enter your name: ")
-        for choosing_name in names:
-            if choosing_name == "cherry":
+        select = input("Enter your name: ")
+        for select in names:
+            if select == names:
                 return True
             else:
                 return False
