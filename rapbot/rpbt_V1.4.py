@@ -1,7 +1,6 @@
 import time
 from os import system, name
-#import random
-
+import collections
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
@@ -19,11 +18,13 @@ def intro():
         select = input("Enter your name: ")
         for select in names:
             if select == names:
-                return True
+                print("Battlename selected")
             else:
-                return False
-
+                intro()
 intro()
+
+# flush the screen after intro
+os.system('clear')
 
 # here will be code to exit() program
 # check string with input // data
