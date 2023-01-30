@@ -35,7 +35,8 @@ def simulation():
             print("Name chosen. ")
             time.sleep(1)
             break
-print(simulation)
+
+simulation()
 
 # flushing the screen again
 os.system('clear')
@@ -52,7 +53,7 @@ def simulation2():
         print("READY? ")
     # write a timer / counter
 
-print(simulation2)
+simulation2()
 
 def simulation3():
         time.sleep(2)
@@ -62,7 +63,7 @@ def simulation3():
         time.sleep(1)
         print("Let's go in..." + "1" + "...")
 
-print(simulation3)
+simulation3()
 
     # RAP BATTLE // ACTUAL ENCOUNTER
     # 1st ROUND OF BATTLE
