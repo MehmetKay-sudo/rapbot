@@ -5,6 +5,8 @@ import collections
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
 # establish list of names
+# need to debug here
+# program does not proceed
 
 def intro():
     while True:
@@ -17,6 +19,7 @@ def intro():
                 print("Battlename successfully selected")
             else:
                 intro()
+        break
 intro()
 
 # flush the screen after intro
