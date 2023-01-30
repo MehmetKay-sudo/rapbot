@@ -6,10 +6,6 @@ import collections
 # START // INITIALISATION-SIMULATION
 # establish list of names
 
-import time
-from os import system, name
-#import random
-
 def intro():
     while True:
         names = [("cherry", "fearless", "rose")]
@@ -17,8 +13,8 @@ def intro():
 
         select = input("Enter your name: ")
         for select in names:
-            if select == names:
-                print("Battlename selected")
+            if select in names:
+                print("Battlename successfully selected")
             else:
                 intro()
 intro()
@@ -26,29 +22,25 @@ intro()
 # flush the screen after intro
 os.system('clear')
 
-# here will be code to exit() program
-# check string with input // data
-def simulation1():
+# check string with input
+def simulation():
     for x in names:
-        if choosing_name in names:
+        if select in names:
             time.sleep(1)
-            print("." + "." + "." + "processing data" + "." + "." + ".")
+            dot = "."
+            print(dot*3 + "processing data" + dot*3)
             time.sleep(2)
             print("Please wait. ")
             time.sleep(3)
             print("Name chosen. ")
             time.sleep(1)
             break
-print(simulation1)
+print(simulation)
 
-#  flushing the screen
-# to start battle with a clear screen
-def clear():
-    print(clear)
+# flushing the screen again
+os.system('clear')
 
-print(clear)
-
-    # battle starts
+# battle starts
 def simulation2():
         print("You wanna rhyme against me? ")
         print("Let's see, what you got!")
