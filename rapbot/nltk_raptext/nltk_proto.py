@@ -2,8 +2,7 @@ import nltk
 
 from nltk.tokenize import word_tokenize
 
-text = "Aw, yeah 
-It's Eminem, baby
+text = "Aw, yeah It's Eminem, baby
 Back up in that motherfuckin' ass
 One time for your motherfuckin' mind
 We represent the 313—you know what I’m sayin'?
@@ -64,3 +63,7 @@ And tempted when I see the sins my friends commit"
 
 tokens = word_tokenize(text)
 print(tokens)
+
+# define a function with parts of tokenized speech
+#def tokenized():
+#    text = tokenize(text)
