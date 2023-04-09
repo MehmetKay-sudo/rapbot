@@ -1,6 +1,8 @@
 import time
 from os import system, name
+import sys
 import collections
+import nltk
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
