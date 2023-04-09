@@ -1,4 +1,5 @@
 import time
+import nltk
 from os import system, name
 import sys
 import collections
@@ -8,7 +9,7 @@ import nltk
 # START // INITIALISATION-SIMULATION
 # establish list of names
 # need to debug here
-# program does not proceed
+# program does not fully proceed
 
 def intro():
     while True:
