@@ -4,6 +4,7 @@ from os import system, name
 import sys
 import collections
 import nltk
+from nltk.tokenize import word_tokenize
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
