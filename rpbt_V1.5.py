@@ -2,41 +2,48 @@ import time
 from os import system, name
 import sys
 import collections
+import nltk
 
-# establish list of names
-names = ["cherry", "fearless", "rose"]
+def main():
+  intro()
+  simulation1()
+  simulation2()
+  simulation3()
+  bars()
+  options()
+  compare()
+  bars2()
+  bars_loop()
+  option2()
+  compare2()
+  bars3()
+  bars_loop2()
+  options3()
+  compare3()
+
+# establish list of name
+name = ["cherry", "fearless", "rose"]
 
 def intro():
-    while True:
-        print(names)
-        select = input("Enter your name: ")
-        if select in names:
-            print("Battlename successfully selected")
-            break
-        else:
-            print("Invalid name. Try again.")
-
-intro()
-
-# flush the screen after intro
-#os.system('clear')
+  print(name)
+  select = input("Enter your name: ")
+  if select in name:
+    print("Battlename successfully selected")
+  else:
+    print("Invalid name. Try again.")
 
 # check string with input
-def simulation():
-    if select in names:
-        time.sleep(1)
-        dot = "."
-        print(dot*3 + "processing data" + dot*3)
-        time.sleep(2)
-        print("Please wait. ")
-        time.sleep(3)
-        print("Name chosen. ")
-        time.sleep(1)
-
-simulation()
-
-# flushing the screen again
-#os.system('clear')
+def simulation1():
+  def intro():
+    if select in name:
+      time.sleep(1)
+      dot = "."
+      print(dot*3 + "processing data" + dot*3)
+      time.sleep(2)
+      print("Please wait. ")
+      time.sleep(3)
+      print("Name chosen. ")
+      time.sleep(1)
 
 # battle starts
 def simulation2():
@@ -109,109 +116,83 @@ class Round1:
                     print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
                     print(True)
                     break
-
-        bars()
-        options()
-        compare()
         
-        # 2nd ROUND OF BATTLE
 class Round2:
-  while True:
-    def bars2():
-      bar4 = str("I am straight! ")
-      bar5 = str("Big my brain! ")
-      bar6 = str("Skilled and insane! ")
-      syntax_bot2 = [str(bar4), str(bar5), str(bar6)]
-      print(syntax_bot2)
+  def bars2():
+    bar4 = str("I am straight! ")
+    bar5 = str("Big my brain! ")
+    bar6 = str("Skilled and insane! ")
+    syntax_bot2 = [str(bar4), str(bar5), str(bar6)]
+    print(syntax_bot2)
       
-    # creating loop2 for syntax02
-    def bars_loop2():
-      for i in syntax_bot2:
-        if i in syntax_bot2:
-          print(bar4)
-          print(bar5)
-          print(bar6)
-          break
+  # creating loop2 for syntax02
+  def bars_loop2():
+    for i in syntax_bot2:
+      if i in syntax_bot2:
+        print(bar4)
+        print(bar5)
+        print(bar6)
+        break
           
-    # print the options the rhymer has
-    def options2():
-      rhyme04 = str("1. You are late! ")
-      rhyme05 = str("2. Big my brain! ")
-      rhyme06 = str("3. You just faint and i maintain! ")
-      player_rhymes = (str(rhyme04), str(rhyme05), str(rhyme06))
+  # print the options the rhymer has
+  def options2():
+    rhyme04 = str("1. You are late! ")
+    rhyme05 = str("2. Big my brain! ")
+    rhyme06 = str("3. You just faint and i maintain! ")
+    player_rhymes = (str(rhyme04), str(rhyme05), str(rhyme06))
+    print(player_rhymes)
+      
+  # player has to put input into the game
+    rhyme_user2 = str(input("Enter your rhyme sucker: "))
+      
+  # compare rhyme from user with syntax from bot
+  def compare2():
+    if rhyme_user2 == rhyme04:
+      print("Nice try fella! ")
+      print("Try again! ")
+      print(str(input("Enter your rhyme sucker: ")))
+    elif rhyme_user2 == rhyme05:
+      print("Why are you telling the same thing, as I do? ")
+      print("Try again! ")
+      print(str(input("Enter your rhyme sucker: ")))
+    elif rhyme_user2 == rhyme06:
+      print("You beat me twice, let us see next round")
+  
+class Round3:
+    def bars3():
+      bar7 = str("Killer instinct. ")
+      bar8 = str("Kill you with one ink. ")
+      bar9 = str("Don't try me, otherwise you go exstinct. ")
+      # mix 1st round syntax
+      syntax_bot3 = [str(bar7), str(bar8), str(bar9)]
+      print(syntax_bot3)
+
+    def bars_loop2():
+      for y in syntax_bot3:
+        print(bar7)
+        print(bar8)
+        print(bar9)
+
+    def options3():
+      rhyme07 = str("1. I am greater! ")
+      rhyme08 = str("2. Kill you with one ink. ")
+      rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
+      player_rhymes = (str(rhyme07), str(rhyme08), str(rhyme09))
       print(player_rhymes)
-      
       # player has to put input into the game
-      rhyme_user2 = str(input("Enter your rhyme sucker: "))
-      
-      # compare rhyme from user with syntax from bot
-      def compare2():
-        if rhyme_user2 == rhyme04:
+      rhyme_user3 = str(input("Enter your rhyme sucker: "))
+
+    def compare3():
+      for b in syntax_bot3:
+        if rhyme_user3 == rhyme07:
           print("Nice try fella! ")
           print("Try again! ")
           print(str(input("Enter your rhyme sucker: ")))
-        elif rhyme_user2 == rhyme05:
-          print("Why are you telling the same thing, as I do? ")
+        if rhyme_user3 == rhyme08:
+          print("Why are you telling the same thing, as i do? ")
           print("Try again! ")
           print(str(input("Enter your rhyme sucker: ")))
-        elif rhyme_user2 == rhyme06:
-          print("You beat me twice, let us see next round")
+        if rhyme_user3 == rhyme09:
+          print("AAAAAAHHHHHH! ")
+          print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
           break
-        else:
-          print(False)
-          break
-    
-    bars2()
-    bars_loop2()
-    options2()
-    compare2()
-    
-    class Round3:
-  def bars3():
-    bar7 = str("Killer instinct. ")
-    bar8 = str("Kill you with one ink. ")
-    bar9 = str("Don't try me, otherwise you go exstinct. ")
-    # mix 1st round syntax
-    syntax_bot3 = [str(bar7), str(bar8), str(bar9)]
-    print(syntax_bot3)
-
-  def bars_loop3():
-    for y in syntax_bot3:
-      print(bar7)
-      print(bar8)
-      print(bar9)
-
-  def options3():
-    rhyme07 = str("1. I am greater! ")
-    rhyme08 = str("2. Kill you with one ink. ")
-    rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
-    player_rhymes = (str(rhyme07), str(rhyme08), str(rhyme09))
-    print(player_rhymes)
-    # player has to put input into the game
-    rhyme_user3 = str(input("Enter your rhyme sucker: "))
-
-  def compare3():
-    for b in syntax_bot3:
-      if rhyme_user3 == rhyme07:
-        print("Nice try fella! ")
-        print("Try again! ")
-        print(str(input("Enter your rhyme sucker: ")))
-      else:
-        print(False)
-        break
-      if rhyme_user3 == rhyme08:
-        print("Why are you telling the same thing, as i do? ")
-        print("Try again! ")
-        print(str(input("Enter your rhyme sucker: ")))
-      else:
-        print(False)
-        break
-      if rhyme_user3 == rhyme09:
-        print("AAAAAAHHHHHH! ")
-        print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
-        break
-
-  bars3()
-  bars_loop3()
-  options3()
-  compare3()
