@@ -21,8 +21,7 @@ def intro():
         for select in names:
             if select in names:
                 print("Battlename successfully selected")
-            else:
-                intro()
+            break
         break
 intro()
 
