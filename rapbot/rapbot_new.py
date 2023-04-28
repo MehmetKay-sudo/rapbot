@@ -67,11 +67,7 @@ def intro():
 
     simulation3()
 
-intro()
-
-
-
-
+intro() # intro ready / battle begins
 
     # RAP BATTLE // ACTUAL ENCOUNTER
     # 1st ROUND OF BATTLE
@@ -125,6 +121,7 @@ class Battle:
                         print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
                         print(True)
                         break
+
     # 2nd ROUND OF BATTLE
     class Round2:
         while True:
