@@ -1,51 +1,47 @@
-import time
-import nltk
-from os import system, name
-import sys
-import collections
-import nltk
-from nltk.tokenize import word_tokenize
+#import nltk
+#import sys
+#import collections
+#import nltk
+#from nltk.tokenize import word_tokenize
 
 # all bars are examples and can be modified
 # START // INITIALISATION-SIMULATION
-# establish list of names
-# need to debug here
-# program does not fully proceed
+# in this version, you can exit with exit()
+import os
+import time
 
 def intro():
+    names = ["cherry", "fearless", "rose"]
     while True:
-        names = [("cherry", "fearless", "rose")]
         print(names)
 
         select = input("Enter your name: ")
-        for select in names:
-            if select in names:
-                print("Battlename successfully selected")
-            break
-        break
-intro()
-
-# flush the screen after intro
-os.system('clear')
-
-# check string with input
-def simulation():
-    for x in names:
         if select in names:
-            time.sleep(1)
-            dot = "."
-            print(dot*3 + "processing data" + dot*3)
-            time.sleep(2)
-            print("Please wait. ")
-            time.sleep(3)
-            print("Name chosen. ")
-            time.sleep(1)
+            print("Battlename successfully selected")
             break
+        elif select.lower() == "exit":
+            exit() # Exit the program if the user enters "exit"
 
-simulation()
+    # Flush the screen after intro
+    os.system('clear')
 
-# flushing the screen again
-os.system('clear')
+    # Check string with input
+    def simulation():
+        for x in names:
+            if select in names:
+                time.sleep(1)
+                dot = "."
+                print(dot*3 + "processing data" + dot*3)
+                time.sleep(2)
+                print("Please wait. ")
+                time.sleep(3)
+                print("Name chosen. ")
+                time.sleep(1)
+                break
+
+    simulation()
+
+intro()
 
 # battle starts
 def simulation2():
