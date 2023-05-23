@@ -14,7 +14,7 @@ def count_words(filename):
     return word_count
 
 # Specify the path to your text file
-file_path = '/home/mehmetkaysudo/Schreibtisch/nltk/eminem.txt'
+file_path = 'PATH'
 
 # Call the function to count words in the file
 word_count = count_words(file_path)
