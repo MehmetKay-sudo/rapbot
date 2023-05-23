@@ -31,7 +31,7 @@ def count_words_and_pos(filename):
     return word_count, adjective_count, noun_count, verb_count
 
 # Specify the path to your text file
-file_path = '/home/mehmetkaysudo/Schreibtisch/nltk/eminem.txt'
+file_path = 'PATH'
 
 # Call the function to count words, adjectives, nouns, and verbs in the file
 word_count, adjective_count, noun_count, verb_count = count_words_and_pos(file_path)
