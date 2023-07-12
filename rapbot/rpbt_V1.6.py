@@ -2,9 +2,10 @@ import time
 from os import system, name
 import sys
 import collections
-import nltk
+#import nltk
 
-def main():
+def main(intro, simulation1, simulation2, simulation3, bars, bars2, bars3, options, option2, options3,
+         compare, compare2, compare3, bars_loop, bars_loop2):
   intro()
   simulation1()
   simulation2()
