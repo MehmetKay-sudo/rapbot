@@ -22,16 +22,19 @@ def main(intro, simulation1, simulation2, simulation3, bars, bars2, bars3, optio
   options3()
   compare3()
 
-# establish list of name
-name = ["cherry", "fearless", "rose"]
+main()
 
+# creat an intro to start the rapbot
 def intro():
-  print(name)
+  name = str("Rapbot")
+  name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
+  print(name_select)
   select = input("Enter your name: ")
-  if select in name:
+  if select in name_select:
     print("Battlename successfully selected")
   else:
     print("Invalid name. Try again.")
+    print(name_select)
 
 # check string with input
 def simulation1():
@@ -68,7 +71,8 @@ def simulation3():
 simulation3()
 
 class Round1:
-    while True:
+  round_loop = True
+  while round_loop == True:
         def bars():
             bar1 = str("I rhyme fine!")
             bar2 = str("I rhyme great!")
@@ -82,7 +86,7 @@ class Round1:
                     print(bar1)
                     print(bar2)
                     print(bar3)
-                    break
+        round_loop = False
 
         # print the options the rhymer has / 1st round
         def options():
