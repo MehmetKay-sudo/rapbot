@@ -25,32 +25,31 @@ def main(intro, simulation1, simulation2, simulation3, bars, bars2, bars3, optio
 main()
 
 # creat an intro to start the rapbot
-def intro():
-  name = str("Rapbot")
-  name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
-  print(name_select)
-  select = input("Enter your name: ")
-  if select in name_select:
-    print("Battlename successfully selected")
-  else:
-    print("Invalid name. Try again.")
-    print(name_select)
-
-# check string with input
-def simulation1():
+class intro():
   def intro():
-    if select in name:
-      time.sleep(1)
-      dot = "."
-      print(dot*3 + "processing data" + dot*3)
-      time.sleep(2)
-      print("Please wait. ")
-      time.sleep(3)
-      print("Name chosen. ")
-      time.sleep(1)
-
-# battle starts
-def simulation2():
+    name = str("Rapbot")
+    name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
+    print(name_select)
+    select = input("Enter your name: ")
+    if select in name_select:
+      print("Battlename successfully selected")
+    else:
+      print("Invalid name. Try again.")
+      print(name_select)
+      # check string with input
+  def simulation1():
+    def intro():
+      if select in name:
+        time.sleep(1)
+        dot = "."
+        print(dot*3 + "processing data" + dot*3)
+        time.sleep(2)
+        print("Please wait. ")
+        time.sleep(3)
+        print("Name chosen. ")
+        time.sleep(1)
+      # battle starts
+  def simulation2():
     print("You wanna rhyme against me? ")
     print("Let's see what you got!")
     time.sleep(2)
