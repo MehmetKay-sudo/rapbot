@@ -24,9 +24,13 @@ def main(intro, simulation1, simulation2, simulation3, bars, bars2, bars3, optio
 
 main()
 
+# need to place the __init__(self) function
 # creat an intro to start the rapbot
-class intro():
-  def intro():
+class Intro:
+  def intro(self, name, name_select, select):
+    self.name = name
+    self.name_select = name.select
+    self.select = select 
     name = str("Rapbot")
     name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
     print(name_select)
@@ -37,8 +41,8 @@ class intro():
       print("Invalid name. Try again.")
       print(name_select)
       # check string with input
-  def simulation1():
-    def intro():
+  def simulation1(self):
+    def intro(self):
       if select in name:
         time.sleep(1)
         dot = "."
@@ -49,7 +53,7 @@ class intro():
         print("Name chosen. ")
         time.sleep(1)
       # battle starts
-  def simulation2():
+  def simulation2(self):
     print("You wanna rhyme against me? ")
     print("Let's see what you got!")
     time.sleep(2)
@@ -58,7 +62,7 @@ class intro():
 
 simulation2()
 
-def simulation3():
+def simulation3(self):
     time.sleep(2)
     print("Let's go in..." + "3" + "..." )
     time.sleep(1)
@@ -72,7 +76,10 @@ simulation3()
 class Round1:
   round_loop = True
   while round_loop == True:
-        def bars():
+        def bars(self, bar1, bar2, bar3):
+            self.bar1 = bar1
+            self.bar2 = bar2
+            self.bar3 = bar3
             bar1 = str("I rhyme fine!")
             bar2 = str("I rhyme great!")
             bar3 = str("I am the best in the state!")
@@ -88,7 +95,7 @@ class Round1:
         round_loop = False
 
         # print the options the rhymer has / 1st round
-        def options():
+        def options(self, rhyme01, rhyme02, rhyme03):
             rhyme01 = str("1. I am greater! ")
             rhyme02 = str("2. I rhyme great! ")
             rhyme03 = str("3. You ain't a saint, the worst in the state!")
@@ -99,7 +106,7 @@ class Round1:
             rhyme_user = str(input("Enter your rhyme sucker: "))
 
         # compare rhyme from user with syntax from bot
-        def compare():
+        def compare(self):
             for z in syntax_bot:
                 if rhyme_user == rhyme01:
                     print("Nice try fella! ")
@@ -120,9 +127,11 @@ class Round1:
                     print("You beat me once" + ", " + "Let's see, what you will do in the next round! ")
                     print(True)
                     break
+# Round1 = Round1()
+
 
 class Round2:
-  def bars2():
+  def bars2(self, bar4, bar5, bar6):
     bar4 = str("I am straight! ")
     bar5 = str("Big my brain! ")
     bar6 = str("Skilled and insane! ")
@@ -130,7 +139,7 @@ class Round2:
     print(syntax_bot2)
 
   # creating loop2 for syntax02
-  def bars_loop2():
+  def bars_loop2(self):
     for i in syntax_bot2:
       if i in syntax_bot2:
         print(bar4)
@@ -139,7 +148,7 @@ class Round2:
         break
 
   # print the options the rhymer has
-  def options2():
+  def options2(self, rhyme04, rhyme05, rhyme06, player_rhymes, rhyme_user2):
     rhyme04 = str("1. You are late! ")
     rhyme05 = str("2. Big my brain! ")
     rhyme06 = str("3. You just faint and i maintain! ")
@@ -150,7 +159,7 @@ class Round2:
     rhyme_user2 = str(input("Enter your rhyme sucker: "))
 
   # compare rhyme from user with syntax from bot
-  def compare2():
+  def compare2(self):
     if rhyme_user2 == rhyme04:
       print("Nice try fella! ")
       print("Try again! ")
@@ -161,9 +170,10 @@ class Round2:
       print(str(input("Enter your rhyme sucker: ")))
     elif rhyme_user2 == rhyme06:
       print("You beat me twice, let us see next round")
+# Round2 = Round2()
 
 class Round3:
-    def bars3():
+    def bars3(self, bar7, bar8, bar9):
       bar7 = str("Killer instinct. ")
       bar8 = str("Kill you with one ink. ")
       bar9 = str("Don't try me, otherwise you go exstinct. ")
@@ -171,13 +181,13 @@ class Round3:
       syntax_bot3 = [str(bar7), str(bar8), str(bar9)]
       print(syntax_bot3)
 
-    def bars_loop2():
+    def bars_loop2(self):
       for y in syntax_bot3:
         print(bar7)
         print(bar8)
         print(bar9)
 
-    def options3():
+    def options3(self, rhyme07, rhyme08, rhyme09, player_rhymes, rhyme_user3):
       rhyme07 = str("1. I am greater! ")
       rhyme08 = str("2. Kill you with one ink. ")
       rhyme09 = str("3. You fake n-sync, i terminate before an eye blink! ")
@@ -186,7 +196,7 @@ class Round3:
       # player has to put input into the game
       rhyme_user3 = str(input("Enter your rhyme sucker: "))
 
-    def compare3():
+    def compare3(self):
       for b in syntax_bot3:
         if rhyme_user3 == rhyme07:
           print("Nice try fella! ")
@@ -200,3 +210,5 @@ class Round3:
           print("AAAAAAHHHHHH! ")
           print("You won! "+ ", " + "Let me mourn my defeat rap-samurai! ")
           break
+
+# Round3 = Round3()
