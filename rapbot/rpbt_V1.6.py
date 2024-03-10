@@ -4,33 +4,54 @@ import sys
 import collections
 #import nltk
 
-def main(intro, simulation1, simulation2, simulation3, bars, bars2, bars3, options, option2, options3,
+# a test to run the whole program as a main function 
+def main(self, intro, simulation1, simulation2, simulation3, bars, bars2, bars3, options, option2, options3,
          compare, compare2, compare3, bars_loop, bars_loop2):
-  intro()
-  simulation1()
-  simulation2()
-  simulation3()
-  bars()
-  options()
-  compare()
-  bars2()
-  bars_loop()
-  option2()
-  compare2()
-  bars3()
-  bars_loop2()
-  options3()
-  compare3()
+  
+  self.intro = intro()
+  self.simulation1 = simulation1
+  self.simulation2 = simulation2
+  self.simulation3 = simulation3
+  self.bars = bars
+  self.options = options
+  self.compare = compare
+  self.bars2 = bars2
+  self.bars_loop = bars_loop
+  self.option2 = option2
+  self.compare2 = compare2
+  self.bars3 = bars3
+  self.bars_loop2 = bars_loop2
+  self.options3 = options3
+  self.compare3 = compare3
 
-main()
+main = main()
+#main.intro()
+#main.simulation1()
+#main.simulation2()
+#main.simulation3()
+#main.bars()
+#main.simulation2()
+#main.simulation3()
+#main.bars()
+#main.options()
+#main.compare()
+#main.bars2()
+#main.bars_loop()
+#main.option2()
+#main.compare2()
+#main.bars3()
+#main.bars_loop2()
+#main.options3()
+#main.compare3()
+
 
 # need to place the __init__(self) function
-# creat an intro to start the rapbot
+# create an intro to start the rapbot
 class Intro:
-  def intro(self, name, name_select, select):
+  def __init__(self, name, name_select, select): 
     self.name = name
     self.name_select = name.select
-    self.select = select 
+    self.select = select
     name = str("Rapbot")
     name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
     print(name_select)
