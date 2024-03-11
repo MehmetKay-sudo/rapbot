@@ -48,12 +48,12 @@ main = main()
 # need to place the __init__(self) function
 # create an intro to start the rapbot
 class Intro:
-  def __init__(self, name, name_select, select): 
+  def __init__(self, name, name_select, select):
     self.name = name
     self.name_select = name.select
     self.select = select
     name = str("Rapbot")
-    name_select = ("cherry", "fearless", "killer", "savage", "beast", "king", "queen", "god", "devil", "angel", "demon", "saint", "sin")
+    name_select = ("cherry", "fearless", "applepie")
     print(name_select)
     select = input("Enter your name: ")
     if select in name_select:
