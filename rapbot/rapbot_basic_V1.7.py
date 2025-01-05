@@ -12,7 +12,7 @@ class RapBattle:
         print("Welcome to the Rap Battle!")
         print("Choose a battlename from the following options:")
         print(self.name_select)
-        
+
         while True:
             self.user_name = input("Enter your name: ")
             if self.user_name in self.name_select:
@@ -20,7 +20,7 @@ class RapBattle:
                 break
             else:
                 print("Invalid name. Try again.")
-    
+
     # Simulate battle phases with countdowns.
     def start_battle(self):
         print(f"{self.user_name}, you dare challenge {self.bot_name}?")
@@ -60,7 +60,7 @@ class Round:
                     print("Invalid choice. Try again.")
             except ValueError:
                 print("Please enter a number.")
-    
+
     # Compare the player's rhyme to determine if they beat the bot's rhymes.
     def compare_rhyme(self, user_rhyme):
         bot_rhyme = self.rhymes[-1]  # The third rhyme is always the winning response
@@ -80,7 +80,7 @@ def main():
     battle = RapBattle()
     battle.intro()
     battle.start_battle()
-    
+
     # Define the rounds
     rounds = [
         Round(
@@ -96,7 +96,7 @@ def main():
             rhymes=["I am greater!", "Kill you with one ink.", "You fake n-sync, I terminate before an eye blink!"]
         ),
     ]
-    
+
     # Play each round
     for round_num, round_obj in enumerate(rounds, start=1):
         print(f"\nRound {round_num}:")
@@ -105,7 +105,7 @@ def main():
             user_rhyme = round_obj.player_turn()
             if round_obj.compare_rhyme(user_rhyme):
                 break
-    
+
     print("\nCongratulations! You've beaten Rapbot!")
 
 # Run the main function to start the game
