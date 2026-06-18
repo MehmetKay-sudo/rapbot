@@ -1,44 +1,59 @@
 import os
+import json
 import time
-import openai
-import random # Added for random rhyme selection and potential future use
+import random
 
 # =============================================================================
-# 1. ChatGPT API Connection Setup
+# 1. OpenCode Go API Connection Setup
 # =============================================================================
-# IMPORTANT: Replace "YOUR_API_KEY_HERE" with your actual OpenAI API key.
-# It's recommended to load this from an environment variable for security.
-openai.api_key = "YOUR_API_KEY_HERE"
+from openai import OpenAI
+
+def _load_opencode_key():
+    key = os.environ.get("OPENCODE_ZEN_API_KEY")
+    if key:
+        return key
+    auth_path = os.path.expanduser("~/.local/share/opencode/auth.json")
+    try:
+        with open(auth_path) as f:
+            return json.load(f)["opencode-go"]["key"]
+    except Exception:
+        pass
+    return None
+
+API_KEY = _load_opencode_key()
+client = OpenAI(
+    api_key=API_KEY,
+    base_url="https://opencode.ai/zen/go/v1",
+)
+MODEL = "deepseek-v4-flash"
 
 def get_chatgpt_response(prompt):
     """
-    Sends a prompt to the ChatGPT API (using model gpt-3.5-turbo)
+    Sends a prompt to OpenCode Go (deepseek-v4-flash)
     and returns the result. Includes basic error handling.
     """
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+        response = client.chat.completions.create(
+            model=MODEL,
             messages=[
                 {"role": "system", "content": "You are a creative rap battle assistant. Your responses should be short, punchy, and rhyme well."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=60, # Limit token usage for rap verses
-            temperature=0.8 # Make it a bit more creative
+            max_completion_tokens=300,
+            temperature=0.9
         )
         return response.choices[0].message.content.strip()
-    except openai.error.AuthenticationError:
-        return "Error: OpenAI API key is invalid or missing. Please set it correctly."
-    except openai.error.RateLimitError:
-        return "Error: OpenAI API rate limit exceeded. Please wait a moment and try again."
     except Exception as e:
-        return f"Error connecting to ChatGPT: {str(e)}"
+        msg = str(e)
+        if "401" in msg or "403" in msg or "auth" in msg.lower():
+            return "Error: API key is invalid or missing. Set OPENCODE_ZEN_API_KEY."
+        return f"Error: {msg}"
 
 # =============================================================================
 # 2. Rap Battle Game Classes
 # =============================================================================
 
 class RapBattle:
-    # These are the acceptable battlenames
     NAME_OPTIONS = [
         "cherry", "fearless", "killer", "savage", "beast",
         "king", "queen", "god", "devil", "angel", "demon", "saint", "sin"
@@ -47,13 +62,9 @@ class RapBattle:
     def __init__(self, bot_name="Rapbot"):
         self.bot_name = bot_name
         self.user_name = None
-        self.memory_texts = [] # To hold loaded rap knowledge
+        self.memory_texts = []
 
     def load_memory(self, folder="memory"):
-        """
-        Loads text files from a specified folder into memory.
-        These texts can later be used to influence rap generation.
-        """
         if not os.path.exists(folder):
             print(f"No memory folder '{folder}' found. Create one with .txt files for better rap generation.")
             return
@@ -77,9 +88,7 @@ class RapBattle:
         if not self.memory_texts:
             print("Warning: No memory texts loaded. Rapbot will rely solely on its default LLM knowledge.")
 
-
     def choose_battlename(self):
-        """Allows the user to select a battlename from predefined options."""
         print("Welcome to the Rap Battle!")
         print("Choose your battlename from the following options:")
         print(self.NAME_OPTIONS)
@@ -94,7 +103,6 @@ class RapBattle:
                 print("Invalid name. Please try again.")
 
     def start_battle(self):
-        """Initiates the battle countdown."""
         if not self.user_name:
             print("You must select a battlename first!")
             return
@@ -106,18 +114,16 @@ class RapBattle:
         print("Battle begins!")
         time.sleep(1)
 
+
 class Round:
     def __init__(self, battle_instance):
-        self.battle = battle_instance # Access to RapBattle instance for user_name, memory_texts
+        self.battle = battle_instance
         self.bot_bars = []
         self.player_choices = []
-        self.winning_rhyme = "" # This will be the bot's calculated best response
+        self.winning_rhyme = ""
 
     def generate_bot_rap(self, previous_line=""):
-        """
-        Generates a rap verse for Rapbot using ChatGPT, influenced by loaded memory.
-        """
-        context = " ".join(self.battle.memory_texts[-min(len(self.battle.memory_texts), 3):]) # Use last few memory texts as context
+        context = " ".join(self.battle.memory_texts[-min(len(self.battle.memory_texts), 3):])
         if previous_line:
             prompt = (f"As a skilled rapper, spit a 2-line diss verse that rhymes with and tops this: '{previous_line}'. "
                       f"Consider these themes/words if possible: {context}. Be aggressive and confident.")
@@ -127,36 +133,28 @@ class Round:
 
         print(f"\n{self.battle.bot_name} is thinking...")
         bot_response = get_chatgpt_response(prompt)
-        # Attempt to split into lines, handling various line breaks
         lines = [line.strip() for line in bot_response.split('\n') if line.strip()]
         if len(lines) >= 2:
-            self.bot_bars = lines[:2] # Take the first two lines
+            self.bot_bars = lines[:2]
         elif lines:
-            self.bot_bars = [lines[0], ""] # At least one line
+            self.bot_bars = [lines[0], ""]
         else:
-            self.bot_bars = ["Yo, I'm ready to flow!", "My rhymes are gonna blow!"] # Fallback
+            self.bot_bars = ["Yo, I'm ready to flow!", "My rhymes are gonna blow!"]
 
-        if "Error:" in self.bot_bars[0]: # If an API error occurred
+        if "Error:" in self.bot_bars[0]:
             print(self.bot_bars[0])
-            self.bot_bars = ["My systems are down!", "But I still wear the crown!"] # Fallback
+            self.bot_bars = ["My systems are down!", "But I still wear the crown!"]
             time.sleep(2)
 
-
     def display_bars(self):
-        """Prints Rapbot's current rap bars."""
         print(f"\n{self.battle.bot_name} spits:")
         for bar in self.bot_bars:
             print(bar)
         time.sleep(1)
 
     def generate_player_choices(self):
-        """
-        Generates multiple rhyme options for the player based on Rapbot's last line.
-        One option will be a "winning" rhyme from the LLM, others will be filler.
-        """
         last_bot_line = self.bot_bars[-1] if self.bot_bars else "My mic is ready to ignite!"
-        
-        # 1. Generate a strong counter-rhyme (the winning one)
+
         winning_prompt = (f"As {self.battle.user_name}, give a single, strong, rhyming counter-line "
                           f"to this: '{last_bot_line}'. Make it truly beat the opponent. Just the line.")
         self.winning_rhyme = get_chatgpt_response(winning_prompt)
@@ -164,23 +162,19 @@ class Round:
             print(self.winning_rhyme)
             self.winning_rhyme = f"I'm too good, can't be beat! (Error fallback for: {last_bot_line})"
 
-
-        # 2. Generate some plausible but weaker filler rhymes
         filler_rhymes = []
-        for _ in range(2): # Generate two filler options
+        for _ in range(2):
             filler_prompt = (f"Give a single, rhyming line to this: '{last_bot_line}', "
                              f"but make it sound a bit weak or generic. Just the line.")
             filler_rhyme = get_chatgpt_response(filler_prompt)
             if "Error:" in filler_rhyme:
                 filler_rhyme = f"That's all you got? (Error fallback for: {last_bot_line})"
             filler_rhymes.append(filler_rhyme)
-        
-        # Combine and shuffle choices
+
         self.player_choices = [self.winning_rhyme] + filler_rhymes
         random.shuffle(self.player_choices)
 
     def player_turn(self):
-        """Prompts the player to choose a rhyme and returns their selection."""
         print("\nYour choices:")
         for idx, rhyme in enumerate(self.player_choices, start=1):
             print(f"{idx}. {rhyme}")
@@ -195,10 +189,6 @@ class Round:
                 print("Invalid input. Please enter a number.")
 
     def compare_rhyme(self, user_rhyme):
-        """
-        Compares the user's chosen rhyme against the internally determined winning rhyme.
-        This represents the 'bot evaluating the player'.
-        """
         if user_rhyme == self.winning_rhyme:
             print("\n🔥 BOOM! You nailed it! That rhyme was fire! 🔥")
             return True
@@ -206,18 +196,17 @@ class Round:
             print("\n🙅‍♂️ Nah, that ain't it. Rapbot's still standing strong! Try again! 🙅‍♂️")
             return False
 
+
 # =============================================================================
 # 3. Game Loop with Relaunch Feature
 # =============================================================================
 
 def battle_game():
-    """Main function to run a single rap battle session."""
     battle = RapBattle()
     battle.load_memory()
     battle.choose_battlename()
     battle.start_battle()
 
-    # We will now have fewer, but dynamically generated rounds
     num_rounds = 3
     player_wins = 0
     bot_wins = 0
@@ -226,21 +215,18 @@ def battle_game():
         print(f"\n--- Round {round_num} ---")
         current_round = Round(battle)
 
-        # Bot's turn
         if round_num == 1:
-            current_round.generate_bot_rap() # First round, no previous line
+            current_round.generate_bot_rap()
         else:
-            # For subsequent rounds, the bot could react to the user's last good rhyme
-            # For simplicity, let's just make it generate a new diss each time for now.
-            # A more complex system would feed the user's last "winning" rhyme back.
-            current_round.generate_bot_rap(previous_line=current_round.bot_bars[-1] if current_round.bot_bars else "") # React to bot's last line
+            current_round.generate_bot_rap(
+                previous_line=current_round.bot_bars[-1] if current_round.bot_bars else ""
+            )
         current_round.display_bars()
 
-        # Player's turn
         round_won = False
-        attempts = 2 # Player gets 2 attempts to pick the right rhyme
+        attempts = 2
         while not round_won and attempts > 0:
-            current_round.generate_player_choices() # Generate choices each attempt for variety
+            current_round.generate_player_choices()
             user_rhyme = current_round.player_turn()
             if current_round.compare_rhyme(user_rhyme):
                 player_wins += 1
@@ -252,7 +238,7 @@ def battle_game():
                 else:
                     print("Out of attempts! Rapbot takes this round!")
                     bot_wins += 1
-        
+
         time.sleep(1)
 
     print("\n--- Battle Results ---")
@@ -272,12 +258,12 @@ def battle_game():
         final_rap_prompt = (f"Write a short rap verse about an epic rap battle ending in a tie between {battle.user_name} and Rapbot. "
                             f"Mention the skill on both sides.")
 
-    print("\nChatGPT's Final Verdict Rap:")
+    print("\nOpenCode's Final Verdict Rap:")
     final_rap_response = get_chatgpt_response(final_rap_prompt)
     print(final_rap_response)
 
+
 def main():
-    """Manages the overall game flow, including replays."""
     while True:
         battle_game()
         replay = input("\nDo you want to battle again? (y/n): ").lower()
@@ -287,8 +273,6 @@ def main():
         else:
             print("\nRestarting the mic drop... 🎤\n")
             time.sleep(2)
-            # You might want to clear the screen here depending on the OS
-            # os.system('cls' if os.name == 'nt' else 'clear')
 
 
 if __name__ == "__main__":
